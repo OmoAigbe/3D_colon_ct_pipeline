@@ -1,8 +1,30 @@
 {
-    "python.linting.pylintEnabled": true,
-    "python.formatting.provider": "yapf",
     "editor.rulers": [
         80
     ],
     "editor.formatOnSave": true,
+    // Enable automatic formatting on save for Jupyter notebooks (.ipynb)
+    "notebook.formatOnSave.enabled": true,
+    "notebook.defaultFormatter": "eeyore.yapf",
+    // Python editor formatting
+    "[python]": {
+        "editor.defaultFormatter": "eeyore.yapf",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    // Configure YAPF to use your repo's .style.yapf file
+    "yapf.args": [
+        "--style",
+        "${workspaceFolder}/.style.yapf"
+    ],
+    // Configure Pylint to use your repo's .pylintrc file
+    "pylint.args": [
+        "--rcfile=${workspaceFolder}/.pylintrc"
+    ],
+    // Add src to Python analysis path so local imports resolve cleanly
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/3D_colon_ct_pipeline/src"
+    ]
 }
