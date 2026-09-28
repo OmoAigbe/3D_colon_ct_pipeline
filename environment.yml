@@ -1,4 +1,4 @@
-name: <GITHUB_REPOSITORY>
+name: 3D_colon_ct_pipeline
 channels:
   - anaconda
   - pytorch
